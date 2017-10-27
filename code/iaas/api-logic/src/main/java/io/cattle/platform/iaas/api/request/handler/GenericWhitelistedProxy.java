@@ -312,9 +312,12 @@ public class GenericWhitelistedProxy extends AbstractResponseGenerator implement
 
         if (setCurrentHost) {
             temp.setHeader("Host", request.getResponseUrlBase().replaceFirst("^https?://", ""));
-        } else {
+        }
+        /* this branch breaks things on redirect
+        else {
             temp.setHeader("Host", host);
         }
+        */
 
         String projectHeader = "";
         Set<String> roles = null;
